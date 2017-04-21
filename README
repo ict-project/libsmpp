@@ -1,0 +1,36 @@
+Introduction:
+The AntHill SMPP is a powerful networking library which implements SMPP protocol (v3.4 and v5.0) and supply different 
+fail-over and scaling functionality for it based on AntHill library.
+
+Installation:
+If you are using a source distribution, please select your preferred build system in "Workspaces" dir:
+	Workspaces/autotools - this is a traditional configure/make style building
+	Workspaces/msvc - the project files for Win-developers
+
+Report a bug:
+Try to search for similar issues in our bug database (http:://www.majoron.com/support/) before report a bug. 
+If you did not find anything similar then please submit the new bug. Please use following tips to report a bug:
+	The basics: what you did, what you wanted to happen, and what actually happened.
+	If you don't understand the error message - please ask for help in forum.
+	Be brief, but don't leave any important details out.
+	Use plain English describing the problem.
+	Please describe one problem in each separate bug report.
+	Please do not report bugs for old versions.
+
+Release Notes:
+
+ Version 1.1
+ -----------
+-Implemented SMPP 5.0 (draft 6) protocol 
+-Implemented a lot of new unit tests to verify SMPP coding and decoding
+-Implemented SMPP pdu composer to create SMPP package based on XML description
+-Included XSD scheme for SMPP protocol
+-Included a set of SMPP packages as XML files according to XSD schema
+-Included a set of valid and invalid SMPP dumps
+
+ Version 1.0
+ -----------
+-Implemented SMPP encoder/decoder. Support SMPP v3.4 & 5.0
+-Implemented txt & csv outputters to dump SMPP package into stream
+-Implemented a lot of unit tests to verify SMPP coding and decoding
+-Implemented SMPP dump viewer to see SMPP packages

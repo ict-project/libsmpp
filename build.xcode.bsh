@@ -1,0 +1,17 @@
+#!/bin/bash
+SCRIPT_DIR="$(dirname $(pwd)/$0)"
+
+cd "$SCRIPT_DIR"
+pwd
+rm -Rf build
+mkdir build
+cd build
+pwd
+cmake ../source -DCMAKE_BUILD_TYPE=Release -DCPACK_GENERATOR="TZ;TGZ;STGZ"  -G Xcode
+cd ..
+pwd
+echo "# In order to open project run:"
+echo "open build/*.xcodeproj"
+echo "# In order to compile project run:"
+echo "cd build"
+echo "xcodebuild -configuration Release"

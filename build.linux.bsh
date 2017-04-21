@@ -1,0 +1,14 @@
+#!/bin/bash
+SCRIPT_DIR="$(dirname $(pwd)/$0)"
+
+cd "$SCRIPT_DIR"
+pwd
+rm -Rf build
+mkdir build
+cd build
+pwd
+cmake ../source -DCMAKE_BUILD_TYPE=Release -DCPACK_GENERATOR="TZ;TGZ;STGZ;DEB;RPM"
+cd ..
+pwd
+echo "# In order to make project run:"
+echo "make -C build"
