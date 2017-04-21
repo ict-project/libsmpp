@@ -23,7 +23,7 @@
 #include <exception>
 #include <iostream>
 #include <iomanip>
-#include <strstream>
+#include <sstream>
 #include <typeinfo>
 #include <string>
 #include <list>

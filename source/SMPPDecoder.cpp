@@ -112,7 +112,7 @@ namespace anthill {
 		const std::string SMPPDecoder::getTLVError(void){
 
 			// Create a TLVCode
-			std::strstream oOutStream;
+			std::stringstream oOutStream;
 			const unsigned int nSizeof = 2;
 			if(SMPPOffset::TLV_CODE_POS + nSizeof <= m_aBuffer.size()){
 				const unsigned nShift = m_nOffset + SMPPOffset::TLV_CODE_POS;
@@ -125,7 +125,6 @@ namespace anthill {
 
 			// Output stream
 			std::string sTLVCode(oOutStream.str());
-			oOutStream.freeze(false);
 
 
 			char szBuffer[256];

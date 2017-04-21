@@ -17,7 +17,7 @@
 
 namespace anthill {
 	inline void ByteBuffer::dumpBuffer() const {
-		std::strstream oOutStream;
+		std::stringstream oOutStream;
 		oOutStream << "Buffer instance #" << this << ". Size: " << m_aBuffer.size() << std::endl;
 		oOutStream << " [";
 		this->writeDump(oOutStream);
@@ -26,7 +26,6 @@ namespace anthill {
 
 		// Output stream
 		std::cout << oOutStream.str();
-		oOutStream.freeze(false);
 	}
 
 	inline void ByteBuffer::readDump(std::istream& oInputStream){
