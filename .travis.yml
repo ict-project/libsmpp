@@ -32,11 +32,11 @@ deploy:
   api_key: "$GITHUB_API_KEY"
   file_glob: true
   file: 
-   - "build/libict-*.tar.Z"
-   - "build/libict-*.tar.gz"
-   - "build/libict-*.sh"
-   - "build/libict-*.deb"
-   - "build/libict-*.rpm"
+   - "build/libsmpp-*.tar.Z"
+   - "build/libsmpp-*.tar.gz"
+   - "build/libsmpp-*.sh"
+   - "build/libsmpp-*.deb"
+   - "build/libsmpp-*.rpm"
   skip_cleanup: true
   on:
     tags: true
