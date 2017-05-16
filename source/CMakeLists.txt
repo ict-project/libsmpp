@@ -5,6 +5,12 @@ project(libsmpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
+set(Boost_USE_STATIC_LIBS OFF)
+set(Boost_USE_MULTITHREADED ON)
+set(Boost_USE_STATIC_RUNTIME OFF)
+find_package(Boost 1.45.0 REQUIRED COMPONENTS system)
+include_directories(${Boost_INCLUDE_DIRS})
+
 set(CMAKE_SOURCE_FILES 
  AntHill.cpp          SMPPAlertNotification.cpp    SMPPBroadcastSM.cpp            SMPPDatatypes.cpp        SMPPOutbind.cpp               SMPPResp.cpp             SMPPValidator.cpp
  AntHillSMPP.cpp      SMPPBind.cpp                 SMPPBroadcastSMResp.cpp        SMPPDecoder.cpp          SMPPOutputterBase.cpp         SMPPStructures.cpp       SMPPXMLOutputter.cpp
@@ -19,9 +25,11 @@ set(CMAKE_SOURCE_FILES
 
 add_library(smpp-static STATIC ${CMAKE_SOURCE_FILES})
 set_target_properties(smpp-static  PROPERTIES OUTPUT_NAME smpp)
+target_link_libraries(smpp-static ${Boost_LIBRARIES})
 
 add_library(smpp-shared SHARED ${CMAKE_SOURCE_FILES})
 set_target_properties(smpp-shared  PROPERTIES OUTPUT_NAME smpp)
+target_link_libraries(smpp-shared ${Boost_LIBRARIES})
 
 #add_executable(libsmpp-test test.cpp ${CMAKE_SOURCE_FILES})
 #target_compile_definitions(libsmpp-test PUBLIC -DENABLE_TESTING)
